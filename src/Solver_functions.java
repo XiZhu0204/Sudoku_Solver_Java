@@ -30,7 +30,7 @@ public class Solver_functions {
 		}
 		
 		for (int k = 1; k < 10; k++) {
-			if ( check_valid(board, k, empty) ) {
+			if (check_valid(board, k, empty)) {
 				board[empty.get_row()][empty.get_col()] = k;
 				if (solve_sudoku(board)) {
 					return true;
@@ -68,7 +68,7 @@ public class Solver_functions {
 	
 	static boolean check_row(int[][] board, int num_to_check, empty_location location) {
 		for (int i = 0; i < board[0].length; i++) {
-			if ( i != location.get_col() && board[location.get_row()][i] == num_to_check) {
+			if (board[location.get_row()][i] == num_to_check) {
 				//System.out.println("Row fail");
 				return false;
 			}
@@ -78,7 +78,7 @@ public class Solver_functions {
 	
 	static boolean check_col(int[][] board, int num_to_check, empty_location location) {
 		for (int i = 0; i < board.length; i++) {
-			if ( i != location.get_row() && board[i][location.get_col()] == num_to_check) {
+			if (board[i][location.get_col()] == num_to_check) {
 				//System.out.println("Column fail");
 				return false;
 			}
@@ -93,7 +93,7 @@ public class Solver_functions {
 		
 		for (int i = grid_y_start; i < (grid_y_start + 3); i++) {
 			for (int j = grid_x_start; j < (grid_x_start + 3); j++) {
-				if ( ( i != location.get_col() ) && ( j != location.get_row()) && board[i][j] == num_to_check) {
+				if (board[i][j] == num_to_check) {
 					//System.out.println("Subgrid fail");
 					return false;
 				}
