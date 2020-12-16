@@ -21,11 +21,13 @@ public class Sudoku_Solver {
 				} catch (NumberFormatException e) {
 					System.out.println("The input file contains a character that is not a number or space.");
 					e.printStackTrace();
+					return;
 				}
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("The file \"Sudoku.txt\" is missing.");
 			e.printStackTrace();
+			return;
 		}
 
 		if (Solver_functions.solve_sudoku(board)) {
