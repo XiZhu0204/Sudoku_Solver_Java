@@ -3,15 +3,15 @@ public class Sudoku_Solver {
 
 	public static void main(String[] args) {
 		int[][] board = {
-				{ 7, 8, 0, 4, 0, 0, 1, 2, 0},
-				{ 6, 0, 0, 0, 7, 5, 0, 0, 9},
-				{ 0, 0, 0, 6, 0, 1, 0, 7, 8},
-				{ 0, 0, 7, 0, 4, 0, 2, 6, 0},
-				{ 0, 0, 1, 0, 5, 0, 9, 3, 0},
-				{ 9, 0, 4, 0, 6, 0, 0, 0, 5},
-				{ 0, 7, 0, 3, 0, 0, 0, 1, 2},
-				{ 1, 2, 0, 0, 0, 7, 4, 0, 0},
-				{ 0, 4, 9, 2, 0, 6, 0, 0, 7}
+				{ 8, 0, 0, 0, 0, 0, 0, 0, 0},
+				{ 0, 0, 3, 6, 0, 0, 0, 0, 0},
+				{ 0, 7, 0, 0, 9, 0, 2, 0, 0},
+				{ 0, 5, 0, 0, 0, 7, 0, 0, 0},
+				{ 0, 0, 0, 0, 4, 5, 7, 0, 0},
+				{ 0, 0, 0, 1, 0, 0, 0, 3, 0},
+				{ 0, 0, 1, 0, 0, 0, 0, 6, 8},
+				{ 0, 0, 8, 5, 0, 0, 0, 1, 0},
+				{ 0, 9, 0, 0, 0, 0, 4, 0, 0}
 		}; 
 		// Print board tested
 		//Solver_functions.print_board(board);
@@ -19,11 +19,23 @@ public class Sudoku_Solver {
 		// Find Empty tested
 		//int[] row_col = Solver_functions.find_empty(board);
 		
-		/* Check Valid tested
-		int[] test = {2,7};
+		//Check Valid tested
+		
+		/*
+		int[] test = {2,3};
 		System.out.println(board[2][7]);
-		System.out.println(Solver_functions.check_valid(board, 7, test));
+		System.out.println(Solver_functions.check_valid(board, 4, test));
 		*/
+		
+		
+		if (Solver_functions.solve_sudoku(board)) {
+			System.out.println("Sudoku Solved!");
+			Solver_functions.print_board(board);
+		} else {
+			System.out.println("The Sudoku is unsolvable.");
+		}
+		
+		
 	}
 }
 
